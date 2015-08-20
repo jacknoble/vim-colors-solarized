@@ -112,7 +112,7 @@
 " violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
 " blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
 " cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-" green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+" green     #859900  2/2 brgreen     64 #5f8700 60 -20  65 133 153   0  68 100  60
 "
 " ---------------------------------------------------------------------
 " COLORSCHEME HACKING
@@ -284,7 +284,7 @@ elseif g:solarized_termcolors != 256 && &t_Co >= 16
     let s:vmode       = "cterm"
     let s:base03      = "8"
     let s:base02      = "0"
-    let s:base01      = "10"
+    let s:base01      = "11"
     let s:base00      = "11"
     let s:base0       = "12"
     let s:base1       = "14"
@@ -543,17 +543,18 @@ exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
 
 exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
 "       *Constant        any constant
-"        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
 "        Number          a number constant: 234, 0xff
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
+exe "hi! String"         .s:fmt_none   .s:fg_yellow .s:bg_none
+
 exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
+exe "hi! Statement"      .s:fmt_none   .s:fg_violet  .s:bg_none
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -569,7 +570,7 @@ exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
 "        Macro           same as Define
 "        PreCondit       preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
+exe "hi! Type"           .s:fmt_none   .s:fg_cyan .s:bg_none
 "       *Type            int, long, char, etc.
 "        StorageClass    static, register, volatile, etc.
 "        Structure       struct, union, enum, etc.
@@ -611,7 +612,7 @@ else
 endif
 exe "hi! StatusLine"     .s:fmt_none   .s:fg_base1  .s:bg_base02 .s:fmt_revbb
 exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base00 .s:bg_base02 .s:fmt_revbb
-exe "hi! Visual"         .s:fmt_none   .s:fg_base01 .s:bg_base03 .s:fmt_revbb
+exe "hi! Visual"         .s:fmt_none   .s:fg_base0  .s:bg_base03 .s:fmt_revbb
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
